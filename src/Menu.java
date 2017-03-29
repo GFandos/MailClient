@@ -1,7 +1,4 @@
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.BufferedReader;
@@ -16,12 +13,15 @@ import java.util.Scanner;
 public class Menu {
 
     static Properties mailServerProperties;
+    static Properties checkProperties;
     static Session getMailSession;
     static MimeMessage generateMailMessage;
     static String reciever = "47989768s@iespoblenou.org";
     static String sender;
     static String password;
     static Scanner sc;
+    static String host = "pop.gmail.com";// change accordingly
+    static String mailStoreType = "pop3";
 
     public static void main (String args[]) throws MessagingException {
 
@@ -100,7 +100,35 @@ public class Menu {
 
     private static void getEmails() throws MessagingException {
 
-        showMenu();
+        setCheckMailsProperties();
+
+//        showMenu();
+    }
+
+    private static void setCheckMailsProperties() throws MessagingException {
+
+        Properties properties = new Properties();
+
+        properties.put("mail.pop3.host", host);
+        properties.put("mail.pop3.port", "995");
+        properties.put("mail.pop3.starttls.enable", "true");
+        Session emailSession = Session.getDefaultInstance(properties);
+
+        //create the POP3 store object and connect with the pop server
+        Store store = emailSession.getStore("pop3s");
+
+        try {
+            store.connect(host, sender, password);
+        } catch (MessagingException e) {
+            System.out.println("Invalid user/password.");
+        }
+
+        //create the folder object and open it
+        Folder emailFolder = store.getFolder("INBOX");
+        emailFolder.open(Folder.READ_ONLY);
+
+        Message[] messages = emailFolder.getMessages();
+
     }
 
     private static void sendEmail() throws MessagingException {
