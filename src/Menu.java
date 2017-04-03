@@ -23,7 +23,7 @@ public class Menu {
     static String host = "pop.gmail.com";// change accordingly
     static String mailStoreType = "pop3";
 
-    public static void main (String args[]) throws MessagingException {
+    public static void main (String args[]) throws MessagingException, IOException {
 
         sc = new Scanner(System.in);
 
@@ -48,7 +48,7 @@ public class Menu {
 
     }
 
-    public static void showMenu() throws MessagingException {
+    public static void showMenu() throws MessagingException, IOException {
 
         System.out.println("-------------- BIENVENIDO A CUTREMAIL --------------");
         System.out.println("1.- Enviar email.");
@@ -62,7 +62,7 @@ public class Menu {
 
     }
 
-    public static void getSelection(int option) throws MessagingException {
+    public static void getSelection(int option) throws MessagingException, IOException {
 
         switch (option) {
 
@@ -98,22 +98,11 @@ public class Menu {
         showLogin();
     }
 
-    private static void getEmails() throws MessagingException {
+    private static void getEmails() throws MessagingException, IOException {
 
         setCheckMailsProperties();
 
-//        showMenu();
-    }
-
-    private static void setCheckMailsProperties() throws MessagingException {
-
-        Properties properties = new Properties();
-
-        properties.put("mail.pop3.host", host);
-        properties.put("mail.pop3.port", "995");
-        properties.put("mail.pop3.starttls.enable", "true");
-        Session emailSession = Session.getDefaultInstance(properties);
-
+        Session emailSession = Session.getDefaultInstance(checkProperties);
         //create the POP3 store object and connect with the pop server
         Store store = emailSession.getStore("pop3s");
 
@@ -129,9 +118,53 @@ public class Menu {
 
         Message[] messages = emailFolder.getMessages();
 
+        showMessages(messages);
+
+        showMenu();
     }
 
-    private static void sendEmail() throws MessagingException {
+    private static void showMessages(Message[] messages) throws MessagingException, IOException {
+
+        for (int i = 0, n = messages.length; i < n; i++) {
+            Message message = messages[i];
+            System.out.println("---------------------------------");
+            System.out.println("Email Number " + (i + 1));
+            System.out.println("Subject: " + message.getSubject());
+            System.out.println("From: " + message.getFrom()[0]);
+            System.out.println("Text: " + message.getContent().toString());
+
+            if(seen(message)) System.out.println("Seen." );
+            else System.out.println("Not seen.");
+
+        }
+
+    }
+
+    private static boolean seen(Message m) {
+
+        try {
+
+            if(m.isSet(Flags.Flag.SEEN)) return true;
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    private static void setCheckMailsProperties() throws MessagingException {
+
+        checkProperties = new Properties();
+
+        checkProperties.put("mail.pop3.host", host);
+        checkProperties.put("mail.pop3.port", "995");
+        checkProperties.put("mail.pop3.starttls.enable", "true");
+
+
+    }
+
+    private static void sendEmail() throws MessagingException, IOException {
 
         System.out.print("Receptor: ");
         reciever = sc.next();

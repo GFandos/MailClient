@@ -1,0 +1,50 @@
+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ÌììÃøÿÿÿÿ8©ÿ°Õ±+
+U
+squid:S106";Replace this usage of System.out or System.err by a logger.(ØÙ8©ÿ°Õ±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(”ğˆŸùÿÿÿÿ8óÛ”Õ±+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(ÙŞ Ü8î™€Õ±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8—½—Õ±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8Ï¬“Õ±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(¡¶éøÿÿÿÿ8î¶ÒÕ±+
+Asquid:S1166"%Either log or rethrow this exception.(ï­£Ä8ËíÑÕ±+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(•¥”î8šŠÕ±+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¡ĞÌÅüÿÿÿÿ8ª¼›Ö±+
+Ysquid:S1197"8Move the array designator from the variable to the type.(Ï™¾ıÿÿÿÿ8§³ÀÕ±+
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(Ìì¢Ï8¥Ä«Ö±+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ËíÑÕ±+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(¨½Îÿ8Êì’Õ±+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(Û§š¿8ÃƒÕ±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(âü®üÿÿÿÿ8ª³Õ±+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(·ƒé°8ª®¡Õ±+
+1squid:S1220""Move this file to a named package.
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(Ú€±8×™±Ö±+
+<squid:S2068" Remove this hard-coded password.(í’¯8§å¬Õ±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8î¶ÒÕ±+
+\squid:S1147";Remove this call to "exit" or ensure it is really required.(ôá¤“úÿÿÿÿ8í¶¦Õ±+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(»Â‚ñ8†æ¶Õ±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8î¶ÒÕ±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ÆÇâÈıÿÿÿÿ8óáˆÕ±+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(—Å®ı8ÅŞ˜Õ±+
+Asquid:S1166"%Either log or rethrow this exception.(°±âİ8×™±Ö±+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8©ÿ°Õ±+
+Nsquid:S1481"-Remove this unused "messages" local variable.(­ñ•¯ûÿÿÿÿ8ôÊ´Ö±+
+]squid:S1854"<Remove this useless assignment to local variable "messages".(­ñ•¯ûÿÿÿÿ8ôÊ´Ö±+
